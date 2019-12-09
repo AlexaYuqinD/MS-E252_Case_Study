@@ -612,7 +612,7 @@ ui <- fluidPage(
       selectInput("param", "Parameter:",
                   c("Probability of Warm Rain" = "pwarm",
                     "Probability of Botrytis" = "pbot",
-                    "Probability of Sugar Level" = "sugar",
+                    "Probability of 25% Sugar Level" = "sugar",
                     "Risk Tolerance" = "rho")),
       textOutput("senstext")
     ),
@@ -698,7 +698,7 @@ server <- function(input, output) {
       }
       else if (input$dataav == "nodata" && input$sporesav == "aspores") {
         if (decspores() == "Buy spores") {
-          paste("Certain equivalent of harvest immediately: ", dec2()[2], ", Certain equivalent of not harvest: ", dec2()[3])
+          paste("Certain equivalent of harvest immediately: ", as.numeric(dec2()[2])+10000, ", Certain equivalent of not harvest: ", dec2()[3])
         }
         else {
           paste("Certain equivalent of harvest immediately: ", dec1()[2], ", Certain equivalent of not harvest: ", dec1()[3])
@@ -725,7 +725,7 @@ server <- function(input, output) {
       else {
         if (decdata1() == "Don't buy data") {
           if (decspores() == "Buy spores") {
-            paste("Certain equivalent of harvest immediately: ",dec2()[2], ", Certain equivalent of not harvest: ", dec2()[3])
+            paste("Certain equivalent of harvest immediately: ",as.numeric(dec2()[2])+10000, ", Certain equivalent of not harvest: ", dec2()[3])
           }
           else {
             paste("Certain equivalent of harvest immediately: ",dec1()[2], ", Certain equivalent of not harvest: ", dec1()[3])
@@ -734,14 +734,14 @@ server <- function(input, output) {
         else {
           if (decspores() == "Buy spores") {
             if (is.null(input$file)) {
-              paste("<b>Case 1: </b> Detector predicts warm rain  &nbsp <b>Certain equivalent of harvest immediately: </b>", dec5()[2]," &nbsp <b>Certain equivalent of not harvest: </b>", dec5()[3], "<br>", "<b>Case 2: </b> Detector predicts no warm rain &nbsp <b>Certain equivalent of harvest immediately:</b>", dec6()[2], "<b>Certain equivalent of not harvest:</b>", dec6()[3])
+              paste("<b>Case 1: </b> Detector predicts warm rain  &nbsp <b>Certain equivalent of harvest immediately: </b>", as.numeric(dec5()[2])+10000," &nbsp <b>Certain equivalent of not harvest: </b>", dec5()[3], "<br>", "<b>Case 2: </b> Detector predicts no warm rain &nbsp <b>Certain equivalent of harvest immediately:</b>", dec6()[2], "<b>Certain equivalent of not harvest:</b>", dec6()[3])
             }
             else {
               if (detector() == "Warm rain") {
-                paste("Detector result: ", detector(), "&nbsp <b>Certain equivalent of harvest immediately: </b>", dec5()[2], " &nbsp <b>Certain equivalent of not harvest: </b>", dec5()[3])
+                paste("Detector result: ", detector(), "&nbsp <b>Certain equivalent of harvest immediately: </b>", as.numeric(dec5()[2])+10000, " &nbsp <b>Certain equivalent of not harvest: </b>", dec5()[3])
               }
               else {
-                paste("Detector result: ", detector(), "&nbsp <b>Certain equivalent of harvest immediately: </b>", dec6()[2], " &nbsp <b>Certain equivalent of not harvest: </b>", dec6()[3])
+                paste("Detector result: ", detector(), "&nbsp <b>Certain equivalent of harvest immediately: </b>", as.numeric(dec6()[2])+10000, " &nbsp <b>Certain equivalent of not harvest: </b>", dec6()[3])
               }
             }
           }
