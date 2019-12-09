@@ -1,5 +1,3 @@
-# MS&E252 Case Study
-
 ## Opening the app
 1. Open RStudio, type the following commands in the console:
 
