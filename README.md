@@ -4,7 +4,7 @@
 1. Open RStudio, type the following commands in the console:
 
 ```bash
-library(shiny)<br />
+library(shiny)
 runGitHub( "MS-E252_Case_Study", "AlexaYuqinD")
 ```
 
