@@ -8,7 +8,7 @@ library(shiny)
 runGitHub( "MS-E252_Case_Study", "AlexaYuqinD")
 ```
 
-2. The other way is to download the files and open app.R under
+2. The other option is to download the files and open app.R under
 the decision tool folder in RStudio, then click on the "Run App" button.
 
 ## Decision Analysis
