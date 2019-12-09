@@ -12,14 +12,11 @@ runGitHub( "MS-E252_Case_Study", "AlexaYuqinD")
 the decision tool folder in RStudio, then click on the "Run App" button.
 
 ## Decision Analysis
-First, select the availability of data and spores respectively. There are 4 scenar-
-ios:
+First, select the availability of data and spores respectively. There are 4 scenarios:
 
 **1. Data not available, Spores not available**
 
-In this case, the app will directly recommend harvest decisions and calcu-
-late the certain equivalent of harvest immediately and not harvest imme-
-diately respectively.
+In this case, the app will directly recommend harvest decisions and calculate the certain equivalent of harvest immediately and not harvest immediately respectively.
 
 The user can also change the probability of warm rain and risk tolerance
 by sliding the sliders and see how the decision changes.
@@ -49,15 +46,13 @@ well as the harvest decision. It will also calculate the value of getting the da
 The user can also change the unfixed parameters to see how the decision
 changes.
 
-(Note that with the given data and parameters, the value of data we cal-
-culated is 0 for all of our models. Models with nearly perfect performance
+(Note that with the given data and parameters, the value of data we calculated is 0 for all of our models. Models with nearly perfect performance
 will generate different results.)
 
 **4. Data available, Spores available**
 
 When both data and spores are available, the user should first choose a
-prediction model from logistic regression, random forest and neural net-
-works for the data to be trained on.
+prediction model from logistic regression, random forest and neural networks for the data to be trained on.
 
 Then, they can upload input data file with the name "input data.csv". In
 the submitted files, we provide an example of input data file. The user
